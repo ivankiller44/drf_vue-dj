@@ -66,7 +66,7 @@ class ComprasDetViewSet(viewsets.ModelViewSet):
 
 
 class ClienteViewSet(viewsets.ModelViewSet):
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     queryset = Cliente.objects.all().order_by('nombre')
     serializer_class = ClienteSerializer
 
