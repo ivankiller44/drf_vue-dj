@@ -235,3 +235,23 @@ def vigila_eliminar_detalle_compra(sender,instance,**kwargs):
     if prod:
         prod.existencia -= int(instance.cantidad)
         prod.save()
+
+
+#signals de facturacion 
+@receiver(post_save, sender=FacturaDet)
+def vigila_guardar_detalle_factura(sender, instance, **kwargs):
+    id_producto = instance.producto.id
+
+    prod = Producto.objects.get(id=id_producto)
+    if prod:
+        prod.existencia = int(prod.existencia) - int(instance.cantidad)
+        prod.save()
+
+@receiver(post_delete, sender=FacturaDet)
+def vigila_eliminar_detalle_factura(sender, instance, **kwargs):
+    id_producto = instance.producto.id
+
+    prod = Producto.objects.get(id=id_producto)
+    if prod:
+        prod.existencia = int(prod.existencia) + int(instance.cantidad)
+        prod.save()
