@@ -179,7 +179,7 @@ class Cliente(models.Model):
 
 
 class FacturaEnc(models.Model):
-    cliente = models.ForeignKey(Cliente,on_delete=models.RESTRICT)
+    cliente = models.ForeignKey(Cliente,on_delete=models.CASCADE) #ANTES EN RESTRICT
     fecha = models.DateField()
 
     fc = models.DateTimeField(auto_now_add=True)
