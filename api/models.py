@@ -77,7 +77,7 @@ class SubCategoria(models.Model):
 
 class Producto(models.Model):
     codigo = models.CharField(
-        max_length=10,null=False,blank=False
+        max_length=100,null=False,blank=False
     )
     descripcion = models.CharField(
         max_length=50,
