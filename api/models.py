@@ -202,6 +202,10 @@ class FacturaDet(models.Model):
     def subtotal(self):
         return self.cantidad * self.precio
 
+    @property
+    def fecha(self):
+        return str(self.cabecera.fecha)
+
     descuento = models.FloatField(default=0)
 
     @property

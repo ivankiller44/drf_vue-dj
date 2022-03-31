@@ -69,7 +69,7 @@ class FacturasDetSerializer(serializers.ModelSerializer):
     producto_descripcion = serializers.ReadOnlyField(source='producto.descripcion')
     class Meta:
         model=FacturaDet
-        fields=['cabecera','id','producto','cantidad','precio','subtotal','descuento','total',"producto_descripcion"]
+        fields=['cabecera','id','producto','cantidad','precio','subtotal','descuento','total',"producto_descripcion","fecha"]
 
 
 class FacturasSerializer(serializers.ModelSerializer):
