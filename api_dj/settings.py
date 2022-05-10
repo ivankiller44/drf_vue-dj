@@ -23,7 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*9%!_=6em_+#jpz*o+(r(0$!q3d1qo7m3b*f@#ky_o$09=j&40'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -78,13 +80,21 @@ WSGI_APPLICATION = 'api_dj.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'apivuedj',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'ivan123',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'apivuedj',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'ivan123',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
 
@@ -125,6 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = '/code/static/'
 
 
 REST_FRAMEWORK = {
