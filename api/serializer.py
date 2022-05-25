@@ -76,5 +76,5 @@ class FacturasSerializer(serializers.ModelSerializer):
     detalle = FacturasDetSerializer(many=True, read_only=True)
     class Meta:
         model = FacturaEnc
-        fields = ['id','cliente','fecha', 'detalle', "observaciones"]
+        fields = ['id','cliente','fecha', 'detalle', "observaciones", "en_mantenimiento", "no_mantenimiento", "complete_mant"]
 

@@ -186,6 +186,9 @@ class FacturaEnc(models.Model):
         null=True,
         blank=True,
     )
+    en_mantenimiento = models.BooleanField(default=False)
+    no_mantenimiento = models.BooleanField(default=False)
+    complete_mant = models.BooleanField(default=False)
 
     fc = models.DateTimeField(auto_now_add=True)
     fm = models.DateTimeField(auto_now=True)
